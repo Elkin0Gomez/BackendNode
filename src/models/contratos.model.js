@@ -42,6 +42,8 @@ const contratoSchema = mongoose.Schema({
         require: true,
         trim: true,
     },
+},{
+    timestamps: true
 })
 
 export default mongoose.model('contratos', contratoSchema)
