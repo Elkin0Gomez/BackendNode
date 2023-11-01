@@ -1,6 +1,6 @@
 import { Router } from "express";
 import { authRequired } from "../middlewares/validateToken.js";
-import { getContrato, getContratos, createContratos, updateContratos, deleteContratos } from "../controllers/contratos.controller.js";
+import { getContrato, getContratos, createContratos, deleteContratos, updateContrato } from "../controllers/contratos.controller.js";
 
 const router = Router();
 
@@ -12,7 +12,7 @@ router.post('/contrato', authRequired, createContratos)
 
 router.delete('/contrato/:id', authRequired, deleteContratos)
 
-router.put('/contrato/:id', authRequired, updateContratos)
+router.put('/contrato/:id', authRequired, updateContrato)
 
 
 export default router

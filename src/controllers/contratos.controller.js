@@ -8,6 +8,7 @@ export const getContratos = async (req, res)=>{
 export const createContratos = async (req, res)=>{
     const { nombre, apellido, documento, fechaExpedicion, sueldo, cargo, fechaInicio, fechaFin} = req.body;
 
+    console.log(req.user)
     const newContrato = new Contrato({
         nombre,
         apellido,
@@ -16,7 +17,8 @@ export const createContratos = async (req, res)=>{
         sueldo,
         cargo,
         fechaInicio,
-        fechaFin
+        fechaFin,
+        user: req.user.id
     });
     const saveContrato = await newContrato.save();
     res.json(saveContrato)
@@ -28,14 +30,16 @@ export const getContrato = async (req, res)=>{
     res.json(contrato)
 }
 
-export const updateContratos = async (req, res)=>{
+export const deleteContratos = async (req, res)=>{
     const contrato = await Contrato.findByIdAndDelete(req.params.id);
     if(!contrato) return res.status(404).json({message: "Contrato no encontrado"});
-    res.json(contrato)
+    return res.sendStatus(204);
 }
 
-export const deleteContratos = async (req, res)=>{
-    const contrato = await Contrato.findByIdAndUpdate(req.params.id, req.body);
+export const updateContrato = async (req, res)=>{
+    const contrato = await Contrato.findByIdAndUpdate(req.params.id, req.body,{
+        new : true 
+    });
     if(!contrato) return res.status(404).json({message: "Contrato no encontrado"});
     res.json(contrato)
 }

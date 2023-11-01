@@ -3,38 +3,38 @@ import mongoose from "mongoose";
 const contratoSchema = mongoose.Schema({
     nombre: {
         type: String,  //tipo de dato
-        require: true, // para que sea requerido
+        required: true, // para que sea requerido
         trim: true,    // para quitar los espacios en blanco
         //unique: true,// sirve para que ese dato sea unico
     },
     apellido: {
         type: String,
-        require: true,
+        required: true,
         trim: true,
     },
     documento: {
         type: String,
-        require: true,
+        required: true,
         trim: true,
     },
     fechaExpedicion: {
         type: String,
-        require: true,
+        required: true,
         trim: true,
     },
     sueldo: {
         type: String,
-        require: true,
+        required: true,
         trim: true,
     },
     cargo: {
         type: String,
-        require: true,
+        required: true,
         trim: true,
     },
     fechaInicio: {
         type: String,
-        require: true,
+        required: true,
         trim: true,
     },
     fechaFin: {
@@ -42,6 +42,11 @@ const contratoSchema = mongoose.Schema({
         require: true,
         trim: true,
     },
+    user : {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User',
+        required: true
+    }
 },{
     timestamps: true
 })
