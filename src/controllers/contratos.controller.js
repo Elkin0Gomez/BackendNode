@@ -37,9 +37,7 @@ export const deleteContratos = async (req, res)=>{
 }
 
 export const updateContrato = async (req, res)=>{
-    const contrato = await Contrato.findByIdAndUpdate(req.params.id, req.body,{
-        new : true 
-    });
+    const contrato = await Contrato.findByIdAndUpdate(req.params.id, req.body,{        new : true     });
     if(!contrato) return res.status(404).json({message: "Contrato no encontrado"});
     res.json(contrato)
-}
+}                                                       
