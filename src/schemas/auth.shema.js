@@ -18,13 +18,13 @@ export const regiterShema = z.object({
 
 export const loginSchema = z.object({
     email : z.string({
-        required_error: 'Email is required'
+        required_error: 'El correo es requerido'
     }).email({
-        message: 'Email is invalid'
+        message: 'El correo es invalido'
     }),
     password : z.string({
-        required_error: 'Password is required'
+        required_error: 'La contraseña es requerida'
     }).min(6, {
-        message: 'Password must be at least 6 characters'
+        message: 'La contraseña debe tener como minimo 6 caracteres'
     })
 })
