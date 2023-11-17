@@ -19,7 +19,6 @@ router.get("/contrato/:id", authRequired, getContrato);
 router.post(
   "/contrato",
   authRequired,
-  validateShema(createContratos),
   createContratos
 );
 
