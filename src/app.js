@@ -2,7 +2,6 @@ import express from 'express';
 import morgan from 'morgan';
 import cookieParser from 'cookie-parser';
 import cors from 'cors';
-
 import authRoutes from './routes/auth.routes.js';
 import contratosRoutes from './routes/contratos.routes.js'
 
@@ -18,5 +17,6 @@ app.use(cookieParser());
 
 app.use("/api",authRoutes);
 app.use("/api",contratosRoutes);
+
 
 export default app;

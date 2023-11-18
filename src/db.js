@@ -8,3 +8,14 @@ export const connectDB = async () => {
         console.error(error);
     }
 };
+
+// export const obtenerDatosDesdeMongoDB = async () => {
+//     try {
+//       await connectDB();
+//       const datos = await Contrato.find().lean();
+//       return datos;
+//     } catch (error) {
+//       console.error("Error al obtener datos desde MongoDB:", error);
+//       throw error;
+//     }
+//   };
