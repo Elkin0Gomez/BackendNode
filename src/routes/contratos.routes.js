@@ -7,6 +7,7 @@ import {
   createContratos,
   deleteContratos,
   updateContrato,
+  generarDocumentoId
 } from "../controllers/contratos.controller.js";
 
 
@@ -22,5 +23,6 @@ router.post(
 router.delete("/contrato/:id", authRequired, deleteContratos);
 router.put("/contrato/:id", authRequired, updateContrato);
 
+router.get('/generarDocumento/:id', generarDocumentoId);
 
 export default router;
